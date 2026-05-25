@@ -28,7 +28,12 @@
         <div class="form-row">
           <div class="form-group">
             <label for="ic">IC Number <span class="req">*</span></label>
-            <input type="text" id="ic" name="ic" placeholder="e.g. 900101-14-1234" required />
+            <input type="text" id="ic" name="ic"
+              placeholder="e.g. CE012345"
+              maxlength="8"
+              autocomplete="off"
+              required />
+            <span class="field-hint">2 letters + 6 digits</span>
           </div>
           <div class="form-group">
             <label for="date_of_birth">Date of Birth <span class="req">*</span></label>
@@ -39,7 +44,15 @@
         <div class="form-row">
           <div class="form-group">
             <label for="mobile_number">Mobile Number <span class="req">*</span></label>
-            <input type="tel" id="mobile_number" name="mobile_number" placeholder="e.g. 012-3456789" required />
+            <div class="phone-wrap">
+              <span class="phone-prefix">+673</span>
+              <input type="tel" id="mobile_number" name="mobile_number"
+                placeholder="7123456"
+                maxlength="7"
+                inputmode="numeric"
+                required />
+            </div>
+            <span class="field-hint">7 or 8 digits (7 digits)</span>
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
@@ -52,12 +65,18 @@
 
         <div class="form-group">
           <label for="installation_address">Installation Address <span class="req">*</span></label>
-          <textarea id="installation_address" name="installation_address" rows="3" placeholder="Full address for installation" required></textarea>
+          <textarea id="installation_address" name="installation_address" rows="3"
+            placeholder="Full address for installation" required></textarea>
         </div>
 
         <div class="form-group half">
           <label for="postcode">Postcode <span class="req">*</span></label>
-          <input type="text" id="postcode" name="postcode" placeholder="e.g. 50000" maxlength="5" required />
+          <input type="text" id="postcode" name="postcode"
+            placeholder="e.g. BS8311"
+            maxlength="6"
+            autocomplete="postal-code"
+            required />
+          <span class="field-hint">2 letters + 4 digits</span>
         </div>
 
         <!-- Employment -->
@@ -65,7 +84,8 @@
 
         <div class="form-group">
           <label for="employer_name">Employer Name <span class="req">*</span></label>
-          <input type="text" id="employer_name" name="employer_name" placeholder="Company / Employer name" required />
+          <input type="text" id="employer_name" name="employer_name"
+            placeholder="Company / Employer name" required />
         </div>
 
         <!-- Emergency Contact -->
@@ -74,11 +94,19 @@
         <div class="form-row">
           <div class="form-group">
             <label for="emergency_contact_name">Contact Name <span class="req">*</span></label>
-            <input type="text" id="emergency_contact_name" name="emergency_contact_name" placeholder="Full name" required />
+            <input type="text" id="emergency_contact_name" name="emergency_contact_name"
+              placeholder="Full name" required />
           </div>
           <div class="form-group">
             <label for="emergency_contact_number">Contact Number <span class="req">*</span></label>
-            <input type="tel" id="emergency_contact_number" name="emergency_contact_number" placeholder="e.g. 012-3456789" required />
+            <div class="phone-wrap">
+              <span class="phone-prefix">+673</span>
+              <input type="tel" id="emergency_contact_number" name="emergency_contact_number"
+                placeholder="7123456"
+                maxlength="7"
+                inputmode="numeric"
+                required />
+            </div>
           </div>
         </div>
 
