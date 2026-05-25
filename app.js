@@ -11,11 +11,7 @@ const qrSource  = urlParams.get('source') || 'QR_Code';
 
 // ── Auto-format helpers ──────────────────────────────────────────────────────
 
-// IC: force UPPERCASE letters, digits only — max 8 chars (2L + 6D)
-document.getElementById('ic').addEventListener('input', function () {
-  const raw = this.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
-  this.value = raw.slice(0, 8);
-});
+// IC: free entry — just trim whitespace, no format restriction
 
 // Mobile: digits only
 document.getElementById('mobile_number').addEventListener('input', function () {
@@ -34,11 +30,6 @@ document.getElementById('postcode').addEventListener('input', function () {
 });
 
 // ── Brunei validators ────────────────────────────────────────────────────────
-
-// IC: exactly 2 uppercase letters followed by 6 digits  (e.g. CE012345)
-function validateIC(value) {
-  return /^[A-Z]{2}\d{6}$/.test(value.toUpperCase());
-}
 
 // Mobile: 7 digits, first digit must be 7 or 8  (Brunei mobile prefix)
 function validateBruneiMobile(value) {
@@ -102,13 +93,6 @@ document.getElementById('prospectForm').addEventListener('submit', async (e) => 
   });
   if (hasError) {
     showError('Please fill in all required fields marked with *');
-    return;
-  }
-
-  // IC validation — Brunei format: 2 letters + 6 digits
-  if (!validateIC(fields.ic)) {
-    form.ic.classList.add('invalid');
-    showError('IC number must be 2 letters followed by 6 digits (e.g. CE012345)');
     return;
   }
 
