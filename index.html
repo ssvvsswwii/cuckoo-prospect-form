@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CUCKOO – Prospect Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <div class="logo-circle">C</div>
+        <h1>CUCKOO</h1>
+        <p class="subtitle">Prospect Registration Form</p>
+      </div>
+
+      <form id="prospectForm" novalidate>
+
+        <!-- Personal Info -->
+        <div class="section-title">Personal Information</div>
+
+        <div class="form-group">
+          <label for="full_name">Full Name <span class="req">*</span></label>
+          <input type="text" id="full_name" name="full_name" placeholder="As per IC" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ic">IC Number <span class="req">*</span></label>
+            <input type="text" id="ic" name="ic" placeholder="e.g. 900101-14-1234" required />
+          </div>
+          <div class="form-group">
+            <label for="date_of_birth">Date of Birth <span class="req">*</span></label>
+            <input type="date" id="date_of_birth" name="date_of_birth" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile_number">Mobile Number <span class="req">*</span></label>
+            <input type="tel" id="mobile_number" name="mobile_number" placeholder="e.g. 012-3456789" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" />
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="section-title">Address</div>
+
+        <div class="form-group">
+          <label for="installation_address">Installation Address <span class="req">*</span></label>
+          <textarea id="installation_address" name="installation_address" rows="3" placeholder="Full address for installation" required></textarea>
+        </div>
+
+        <div class="form-group half">
+          <label for="postcode">Postcode <span class="req">*</span></label>
+          <input type="text" id="postcode" name="postcode" placeholder="e.g. 50000" maxlength="5" required />
+        </div>
+
+        <!-- Employment -->
+        <div class="section-title">Employment</div>
+
+        <div class="form-group">
+          <label for="employer_name">Employer Name <span class="req">*</span></label>
+          <input type="text" id="employer_name" name="employer_name" placeholder="Company / Employer name" required />
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="section-title">Emergency Contact</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="emergency_contact_name">Contact Name <span class="req">*</span></label>
+            <input type="text" id="emergency_contact_name" name="emergency_contact_name" placeholder="Full name" required />
+          </div>
+          <div class="form-group">
+            <label for="emergency_contact_number">Contact Number <span class="req">*</span></label>
+            <input type="tel" id="emergency_contact_number" name="emergency_contact_number" placeholder="e.g. 012-3456789" required />
+          </div>
+        </div>
+
+        <div id="errorMsg" class="error-msg" style="display:none;"></div>
+
+        <button type="submit" id="submitBtn">
+          <span id="btnText">Submit Registration</span>
+          <span id="btnLoader" style="display:none;">Submitting…</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
